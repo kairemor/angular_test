@@ -1,0 +1,54 @@
+<!-- <p>
+  user works!
+</p> -->
+<h1>Hello world : This is our first angular web Thanks </h1>
+<p>This is by {{ first_name }}</p>
+
+<ul>
+  <li>First name : {{ first_name }}</li>
+  <li>Last name : {{ last_name }}</li>
+  <li>Age : {{ age }}</li>
+  <li>Adress: {{adress.city}} ,{{adress.street}} </li>
+</ul>
+
+<form (submit)="addHobby(hobby.value)" >
+  <div>
+    <label>hobby</label>
+    <input type="text" #hobby>
+  </div>
+</form> <br>
+
+<form >
+  <div>
+    <label for="name">Name : </label>
+    <input type="text" [(ngModel)]="first_name" name="first_name" >
+  </div>
+  <div>
+    <label for="age">Age : </label>
+    <input type="number" [(ngModel)]="age" name="age">
+  </div>
+  <div>
+    <label for="email">Email : </label>
+    <input type="text" [(ngModel)]="email" name="email">
+  </div>
+  <div>
+    <label for="street">Street : </label>
+    <input type="text" [(ngModel)]="adress.street" name="street">
+  </div>
+  <div>
+    <label for="city">City : </label>
+    <input type="text" [(ngModel)]="adress.city" name="city">
+  </div>
+  <div>
+    <label for="state">State : </label>
+    <input type="text" [(ngModel)]="adress.state" name="state">
+  </div>
+</form>
+<br><br>
+<button (click)="onClick()" >Click</button>
+<h4>Hobbies</h4>
+<ul>
+  <li *ngFor="let hobby of hobbies ; let i = index" >
+    {{ i+1 }} : {{ hobby }} <button (click)="deleteHobby(hobby)">X</button> <button (click)="updateHobby(hobby)">+</button>
+  </li>
+</ul>
